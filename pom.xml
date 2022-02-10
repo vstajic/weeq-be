@@ -14,7 +14,7 @@
 
   <modules>
     <module>weeq-core-model</module>
-    <module>weeq-repo</module>
+    <module>weeq-core-repo</module>
     <module>weeq-core-business</module>
     <module>weeq-web-shop-api</module>
     <module>weeq-web-shop-dto</module>
@@ -28,6 +28,8 @@
   <description>weeq-be</description>
   <properties>
     <java.version>11</java.version>
+    <springboot.version>2.6.3</springboot.version>
+    <postgresql.version>42.3.2</postgresql.version>
     <spring-cloud.version>2021.0.0</spring-cloud.version>
     <project.version>0.0.1-SNAPSHOT</project.version>
 
@@ -42,12 +44,31 @@
         <artifactId>weeq-core-model</artifactId>
         <version>${project.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>com.burgerham</groupId>
+        <artifactId>weeq-core-repo</artifactId>
+        <version>${project.version}</version>
+      </dependency>
       <dependency>
         <groupId>com.burgerham</groupId>
         <artifactId>weeq-core-business</artifactId>
         <version>${project.version}</version>
       </dependency>
+
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
 
@@ -65,16 +86,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
-    </dependency>
 
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
