@@ -1,7 +1,7 @@
 package com.burgerham.weeq.business.customer;
 
 import com.burgerham.weeq.business.CustomerRepository;
-import com.burgerham.weeq.model.Customer;
+import com.burgerham.weeq.model.customer.Customer;
 import java.util.Optional;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

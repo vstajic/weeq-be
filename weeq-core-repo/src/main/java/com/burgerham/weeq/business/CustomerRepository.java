@@ -1,11 +1,14 @@
 package com.burgerham.weeq.business;
 
-import com.burgerham.weeq.model.Customer;
+import com.burgerham.weeq.model.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service
-public interface CustomerRepository extends JpaRepository<Customer, Long>{
+@Transactional(propagation = Propagation.MANDATORY)
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
   Customer findByUsername(final String username);
 

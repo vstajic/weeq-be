@@ -1,0 +1,16 @@
+CREATE USER qwer WITH PASSWORD 'qwer'
+    LOGIN
+    SUPERUSER
+    INHERIT
+    CREATEDB
+    CREATEROLE
+    NOREPLICATION;
+
+CREATE DATABASE weeq
+    WITH
+    OWNER = weeq
+    ENCODING = 'UTF8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+COMMENT ON DATABASE weeq IS 'Weed shop Database';
+

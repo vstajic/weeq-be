@@ -1,7 +1,7 @@
 package com.burgerham.weeq.web.shop.api.customer;
 
 import com.burgerham.weeq.business.customer.CustomerService;
-import com.burgerham.weeq.model.Customer;
+import com.burgerham.weeq.model.customer.Customer;
 import com.burgerham.weeq.web.shop.dto.customer.CustomerDto;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
