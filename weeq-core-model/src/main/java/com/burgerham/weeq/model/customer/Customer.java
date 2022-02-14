@@ -10,20 +10,24 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Table(name = "customer")
 @Entity
 public class Customer extends BaseEntity {
 
-  @OneToOne(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToOne(mappedBy = "customerId", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private CustomerAddress address;
 
-  @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "customerId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
   private List<BasketItems> basketItems;
 
   @Column(name = "username")
@@ -38,6 +42,10 @@ public class Customer extends BaseEntity {
   @Column(name = "last_name")
   private String lastName;
 
-
-
+  public Customer(final String username, final String password, final String firstName, final String lastName) {
+    this.username = username;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 }

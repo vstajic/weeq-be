@@ -8,9 +8,9 @@ CREATE TABLE IF NOT EXISTS customer
     last_name        TEXT,
 
     created_at       TIMESTAMPTZ NOT NULL,
-    updated_at       TIMESTAMPTZ NOT NULL,
-    created_by       TIMESTAMPTZ NOT NULL,
-    last_modified_by timestamptz,
+    last_modified_at TIMESTAMPTZ NOT NULL,
+    created_by       TEXT        NOT NULL,
+    last_modified_by TEXT,
     version          INTEGER     NOT NULL
 );
 COMMENT ON TABLE customer IS 'Defines a customer.';
@@ -31,9 +31,9 @@ CREATE TABLE IF NOT EXISTS customer_address
     country          TEXT        NOT NULL,
 
     created_at       TIMESTAMPTZ NOT NULL,
-    updated_at       TIMESTAMPTZ NOT NULL,
-    created_by       TIMESTAMPTZ NOT NULL,
-    last_modified_by timestamptz,
+    last_modified_at TIMESTAMPTZ NOT NULL,
+    created_by       TEXT        NOT NULL,
+    last_modified_by TEXT        NOT NULL,
     version          INTEGER     NOT NULL
 );
 COMMENT ON TABLE customer IS 'Defines a customer customer address.';
@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS brand
     description      TEXT,
 
     created_at       TIMESTAMPTZ NOT NULL,
-    updated_at       TIMESTAMPTZ NOT NULL,
-    created_by       TIMESTAMPTZ NOT NULL,
-    last_modified_by TIMESTAMPTZ,
+    last_modified_at TIMESTAMPTZ NOT NULL,
+    created_by       TEXT        NOT NULL,
+    last_modified_by TEXT,
     version          INTEGER     NOT NULL
 );
 COMMENT ON TABLE brand IS 'Defines a product being offered at the store.';
@@ -73,9 +73,9 @@ CREATE TABLE IF NOT EXISTS product
     available         BOOLEAN     NOT NULL DEFAULT TRUE,
 
     created_at        TIMESTAMPTZ NOT NULL,
-    updated_at        TIMESTAMPTZ NOT NULL,
-    created_by        TIMESTAMPTZ NOT NULL,
-    last_modified_by  TIMESTAMPTZ,
+    last_modified_at  TIMESTAMPTZ NOT NULL,
+    created_by        TEXT        NOT NULL,
+    last_modified_by  TEXT        NOT NULL,
     version           INTEGER     NOT NULL
 );
 COMMENT ON TABLE product IS 'Defines a product being offered at the store.';
@@ -97,9 +97,9 @@ CREATE TABLE IF NOT EXISTS price_model
     currency         TEXT        NOT NULL,
 
     created_at       TIMESTAMPTZ NOT NULL,
-    updated_at       TIMESTAMPTZ NOT NULL,
-    created_by       TIMESTAMPTZ NOT NULL,
-    last_modified_by TIMESTAMPTZ,
+    last_modified_at TIMESTAMPTZ NOT NULL,
+    created_by       TEXT        NOT NULL,
+    last_modified_by TEXT        NOT NULL,
     version          INTEGER     NOT NULL
 );
 COMMENT ON TABLE price_model IS 'Data that determines prices of current products.';
@@ -120,9 +120,9 @@ CREATE TABLE IF NOT EXISTS basket_items
     quantity         INTEGER     NOT NULL,
 
     created_at       TIMESTAMPTZ NOT NULL,
-    updated_at       TIMESTAMPTZ NOT NULL,
-    created_by       TIMESTAMPTZ NOT NULL,
-    last_modified_by TIMESTAMPTZ,
+    last_modified_at TIMESTAMPTZ NOT NULL,
+    created_by       TEXT        NOT NULL,
+    last_modified_by TEXT,
     version          INTEGER     NOT NULL
 );
 COMMENT ON TABLE basket_items IS 'Defines a product being offered at the store.';

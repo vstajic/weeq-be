@@ -2,7 +2,10 @@ package com.burgerham.weeq.business.customer;
 
 import com.burgerham.weeq.business.CustomerRepository;
 import com.burgerham.weeq.model.customer.Customer;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,4 +30,12 @@ public class CustomerService {
     return customerRepository.findById(id);
   }
 
+  public void initCustomers() {
+    List<Customer> customers = Stream.of(
+        new Customer("asd01@getnada.com", "ASDqwe123!", "Ewa", "Pick"),
+        new Customer("asd02@getnada.com", "ASDqwe123!", "George", "Pick")
+    ).collect(Collectors.toList());
+
+    customerRepository.saveAll(customers);
+  }
 }

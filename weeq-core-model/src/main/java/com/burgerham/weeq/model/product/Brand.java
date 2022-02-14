@@ -1,6 +1,5 @@
 package com.burgerham.weeq.model.product;
 
-import com.burgerham.weeq.model.basket.BasketItems;
 import com.burgerham.weeq.model.common.BaseEntity;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -9,11 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Table(name = "brand")
 @Entity
