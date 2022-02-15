@@ -10,7 +10,12 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 import javax.persistence.Version;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+@Getter
+@Setter
 
 @MappedSuperclass
 public abstract class BaseEntity {

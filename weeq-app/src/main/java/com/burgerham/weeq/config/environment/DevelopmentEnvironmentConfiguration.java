@@ -1,7 +1,7 @@
 package com.burgerham.weeq.config.environment;
 
 import com.burgerham.weeq.business.customer.CustomerService;
-import com.burgerham.weeq.profile.WeeqProfiles;
+import com.burgerham.weeq.common.profile.WeeqProfiles;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;

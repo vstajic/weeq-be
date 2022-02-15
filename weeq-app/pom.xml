@@ -18,13 +18,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <scope>runtime</scope>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-business</artifactId>
     </dependency>
     <dependency>
       <groupId>com.burgerham</groupId>
-      <artifactId>weeq-core-business</artifactId>
+      <artifactId>weeq-core-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 

@@ -44,10 +44,10 @@ public class DatabaseBasedPropertySourceLocator implements PropertySourceLocator
 
   private List<DatabasePropertyEntity> readAllEntriesFromDatabase(Environment environment, HikariDataSource dataSource) {
 
-    JdbcTemplate t = new JdbcTemplate(dataSource);
+    JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
     String appName = environment.getProperty("spring.application.name");
     String query = "select * from spring_property where application = '" + appName + "'";
-    return t.query(query, new DatabasePropertyRowMapper());
+    return jdbcTemplate.query(query, new DatabasePropertyRowMapper());
   }
 
   private HikariConfig createHikariConfig(Environment environment) {
