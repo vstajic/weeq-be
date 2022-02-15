@@ -23,6 +23,10 @@
     </dependency>
     <dependency>
       <groupId>com.burgerham</groupId>
+      <artifactId>weeq-web-shop-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-common</artifactId>
     </dependency>
     <dependency>

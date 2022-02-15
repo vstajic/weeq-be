@@ -58,6 +58,11 @@
       </dependency>
       <dependency>
         <groupId>com.burgerham</groupId>
+        <artifactId>weeq-web-shop-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.burgerham</groupId>
         <artifactId>weeq-core-common</artifactId>
         <version>${project.version}</version>
       </dependency>

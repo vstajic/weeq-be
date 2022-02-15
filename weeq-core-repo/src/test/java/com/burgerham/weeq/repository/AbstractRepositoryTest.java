@@ -5,6 +5,7 @@ import com.burgerham.weeq.model.common.BaseEntity;
 import java.io.IOException;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,11 +25,15 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class AbstractRepositoryTest {
 
-  public static PostgreSQLContainer<?> postgreSQLContainer = new PostgreSQLContainer<>("postgres:13.2")
+  public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:13.2")
       .withDatabaseName("weeq-integration-tests")
-      .withExposedPorts(8888)
       .withUsername("sa")
       .withPassword("sa");
+
+  @Test
+  void contextLoads() {
+    System.out.println("Context loads!");
+  }
 
   public static class InitializerWithSecondLevelCache extends Initializer {
 
@@ -50,7 +55,7 @@ public abstract class AbstractRepositoryTest {
     }
 
     public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
-      System.out.println("jdbc url: " + postgreSQLContainer.getJdbcUrl());
+      System.out.println("jdbc url: " + container.getJdbcUrl());
       Stream<String> applicationProperties = Stream.of(
           "spring.jpa.show-sql=true",
           "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect",
@@ -61,12 +66,12 @@ public abstract class AbstractRepositoryTest {
           "spring.datasource.hikari.maximum-pool-size=5",
           "spring.jpa.properties.hibernate.cache.use_second_level_cache=" + useSecondLevelCache,
           "spring.jpa.properties.hibernate.cache.use_query_cache=" + useSecondLevelCache,
-          "spring.datasource.url=" + postgreSQLContainer.getJdbcUrl(),
-          "spring.datasource.username=" + postgreSQLContainer.getUsername(),
-          "spring.datasource.password=" + postgreSQLContainer.getPassword(),
-          "spring.flyway.url=" + postgreSQLContainer.getJdbcUrl(),
-          "spring.flyway.user=" + postgreSQLContainer.getUsername(),
-          "spring.flyway.password=" + postgreSQLContainer.getPassword(),
+          "spring.datasource.url=" + container.getJdbcUrl(),
+          "spring.datasource.username=" + container.getUsername(),
+          "spring.datasource.password=" + container.getPassword(),
+          "spring.flyway.url=" + container.getJdbcUrl(),
+          "spring.flyway.user=" + container.getUsername(),
+          "spring.flyway.password=" + container.getPassword(),
           "spring.jpa.properties.hibernate.generate_statistics=true",
           "spring.jpa.properties.hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer"
       );

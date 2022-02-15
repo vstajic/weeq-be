@@ -1,14 +1,17 @@
 package com.burgerham.weeq.repository.customer;
 
 import com.burgerham.weeq.business.customer.CustomerRepository;
+import com.burgerham.weeq.common.profile.WeeqProfiles;
 import com.burgerham.weeq.model.customer.Customer;
 import com.burgerham.weeq.repository.AbstractTransactionalRepositoryTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(initializers = {CustomerRepositoryTest.Initializer.class})
+@ActiveProfiles({WeeqProfiles.INTEGRATION_TEST})
 public class CustomerRepositoryTest extends AbstractTransactionalRepositoryTest {
 
   public static class Initializer extends AbstractTransactionalRepositoryTest.Initializer {}
