@@ -1,4 +1,4 @@
-package com.burgerham.weeq.business;
+package com.burgerham.weeq.business.customer;
 
 import com.burgerham.weeq.model.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

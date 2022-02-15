@@ -1,4 +1,4 @@
-package com.burgerham.weeq.config;
+package com.burgerham.weeq.config.db;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
