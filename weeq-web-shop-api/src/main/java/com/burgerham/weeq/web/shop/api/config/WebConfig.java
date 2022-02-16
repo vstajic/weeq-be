@@ -1,4 +1,4 @@
-package com.burgerham.weeq.web.shop.api.customer.config;
+package com.burgerham.weeq.web.shop.api.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
