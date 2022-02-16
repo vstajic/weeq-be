@@ -20,15 +20,15 @@ import lombok.Setter;
 
 @Table(name = "basket_items")
 @Entity
-public class BasketItems extends BaseEntity {
+public class BasketItem extends BaseEntity {
 
   @ManyToOne
   @JoinColumn(name = "customer_id")
-  private Customer customerId;
+  private Customer customer;
 
   @ManyToOne
   @JoinColumn(name = "product_id")
-  private Product productId;
+  private Product product;
 
   @Column(name = "quantity")
   private int quantity;

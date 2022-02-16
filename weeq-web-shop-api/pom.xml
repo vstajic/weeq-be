@@ -17,17 +17,25 @@
   </properties>
 
   <dependencies>
+<!--    WEEQ MODULE -->
+    <dependency>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-model</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-business</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-web-shop-dto</artifactId>
-      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-lib</artifactId>
     </dependency>
 
+<!--    MODEL MAPPER  -->
     <dependency>
       <groupId>org.modelmapper</groupId>
       <artifactId>modelmapper</artifactId>

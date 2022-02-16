@@ -1,6 +1,6 @@
 package com.burgerham.weeq.model.product;
 
-import com.burgerham.weeq.model.basket.BasketItems;
+import com.burgerham.weeq.model.basket.BasketItem;
 import com.burgerham.weeq.model.common.BaseEntity;
 import java.util.List;
 import java.util.Set;
@@ -26,8 +26,8 @@ import lombok.Setter;
 @Entity
 public class Product extends BaseEntity {
 
-  @OneToMany(mappedBy = "productId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-  private List<BasketItems> basketItems;
+  @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+  private List<BasketItem> basketItems;
 
   @OneToMany(mappedBy = "productId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
   private Set<PriceModel> priceModels;

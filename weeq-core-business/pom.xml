@@ -25,6 +25,10 @@
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-model</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-lib</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

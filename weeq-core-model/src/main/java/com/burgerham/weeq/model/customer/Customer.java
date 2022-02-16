@@ -1,6 +1,6 @@
 package com.burgerham.weeq.model.customer;
 
-import com.burgerham.weeq.model.basket.BasketItems;
+import com.burgerham.weeq.model.basket.BasketItem;
 import com.burgerham.weeq.model.common.BaseEntity;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -29,8 +29,8 @@ public class Customer extends BaseEntity {
   @OneToOne(mappedBy = "customerId", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
   private CustomerAddress address;
 
-  @OneToMany(mappedBy = "customerId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-  private List<BasketItems> basketItems;
+  @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+  private List<BasketItem> basketItems;
 
   @Column(name = "username")
   private String username;

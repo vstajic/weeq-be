@@ -17,9 +17,10 @@
     <module>weeq-core-model</module>
     <module>weeq-core-repo</module>
     <module>weeq-core-business</module>
+    <module>weeq-core-security</module>
+    <module>weeq-core-lib</module>
     <module>weeq-web-shop-api</module>
     <module>weeq-web-shop-dto</module>
-    <module>weeq-core-security</module>
   </modules>
 
   <groupId>com.burgerham</groupId>
@@ -40,6 +41,9 @@
 
   <dependencyManagement>
     <dependencies>
+
+
+      <!--      WEEQ MODULE  -->
       <dependency>
         <groupId>com.burgerham</groupId>
         <artifactId>weeq-core-model</artifactId>
@@ -62,11 +66,22 @@
       </dependency>
       <dependency>
         <groupId>com.burgerham</groupId>
+        <artifactId>weeq-web-shop-dto</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.burgerham</groupId>
         <artifactId>weeq-core-security</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.burgerham</groupId>
+        <artifactId>weeq-core-lib</artifactId>
         <version>${project.version}</version>
       </dependency>
 
 
+      <!--      POSTGRES  -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -80,6 +95,7 @@
       </dependency>
 
 
+      <!--      TEST CONTAINER  -->
       <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>junit-jupiter</artifactId>
@@ -93,6 +109,7 @@
 
 
   <dependencies>
+    <!--    WEEQ MODULE   -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -106,6 +123,8 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+
+    <!--    SPRING  -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -129,6 +148,14 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
       <version>3.1.0</version>
+    </dependency>
+
+
+    <!--    APACHE COMMONS  -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.4</version>
     </dependency>
 
   </dependencies>
