@@ -30,6 +30,10 @@
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-security</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

@@ -1,4 +1,4 @@
-package com.burgerham.weeq.config.security;
+package com.burgerham.weeq.security.service;
 
 import com.burgerham.weeq.business.customer.CustomerRepository;
 import com.burgerham.weeq.model.customer.Customer;
