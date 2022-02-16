@@ -1,4 +1,4 @@
-package com.burgerham.weeq.common;
+package com.burgerham.weeq.model.currency;
 
 import java.util.Currency;
 import lombok.Getter;

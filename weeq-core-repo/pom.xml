@@ -22,11 +22,6 @@
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-model</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.burgerham</groupId>
-      <artifactId>weeq-core-common</artifactId>
-    </dependency>
-
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

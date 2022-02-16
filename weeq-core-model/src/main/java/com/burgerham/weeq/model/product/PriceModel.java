@@ -1,6 +1,6 @@
 package com.burgerham.weeq.model.product;
 
-import com.burgerham.weeq.common.CurrencyCode;
+import com.burgerham.weeq.model.currency.CurrencyCode;
 import com.burgerham.weeq.model.common.BaseEntity;
 import java.math.BigDecimal;
 import javax.persistence.Entity;

@@ -1,6 +1,5 @@
 package com.burgerham.weeq.repository;
 
-import com.burgerham.weeq.common.profile.WeeqProfiles;
 import com.burgerham.weeq.model.common.BaseEntity;
 import java.io.IOException;
 import java.util.stream.Stream;
@@ -21,7 +20,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @SpringBootTest
 @Testcontainers
 @ExtendWith(SpringExtension.class)
-@ActiveProfiles(WeeqProfiles.INTEGRATION_TEST)
+@ActiveProfiles("integrationTest")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class AbstractRepositoryTest {
 

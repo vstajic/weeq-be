@@ -26,14 +26,105 @@
       <artifactId>weeq-web-shop-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.burgerham</groupId>
-      <artifactId>weeq-core-common</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${maven-failsafe-plugin.version}</version>
+        <configuration>
+          <skip>${skipTests}</skip>
+          <includes>
+            <include>**/*IT.java</include>
+          </includes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+            <configuration>
+              <groups>IntegrationTest</groups>
+              <excludedGroups>ProfiledIntegrationTest, MvcTest, ExchangeRateTest</excludedGroups>
+            </configuration>
+          </execution>
+          <execution>
+            <id>profiled-integration-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+            <configuration>
+              <groups>ProfiledIntegrationTest</groups>
+              <excludedGroups>IntegrationTest, MvcTest, ExchangeRateTest</excludedGroups>
+            </configuration>
+          </execution>
+          <execution>
+            <id>mvc-integration-tests</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+            <configuration>
+              <groups>MvcTest</groups>
+              <excludedGroups>ProfiledIntegrationTest, IntegrationTest, ExchangeRateTest</excludedGroups>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${springboot.version}</version>
+        <configuration>
+          <excludes>
+            <exclude>
+              <!-- agent classes should not be inside the spring boot fat jar.
+                   so we are able to detect if the agent was defined via -javaagent:...
+              -->
+              <groupId>com.topdesk</groupId>
+              <artifactId>time-transformer-agent</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>build-info</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-plugin.version}</version>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
 
 </project>
