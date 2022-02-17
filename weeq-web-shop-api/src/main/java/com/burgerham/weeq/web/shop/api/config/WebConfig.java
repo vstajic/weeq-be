@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebConfig {
 
+  public static final String API_PREFIX = "/api/shop";
+
   @Bean
   public ModelMapper modelMapper() {
     return new ModelMapper();
