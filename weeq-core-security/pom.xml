@@ -16,6 +16,7 @@
     <maven.compiler.target>15</maven.compiler.target>
   </properties>
 
+  <!--  WEEQ MODULE  -->
   <dependencies>
     <dependency>
       <groupId>com.burgerham</groupId>
@@ -25,6 +26,19 @@
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-repo</artifactId>
     </dependency>
+
+    <!--  JWT  -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+    </dependency>
+
   </dependencies>
+
 
 </project>

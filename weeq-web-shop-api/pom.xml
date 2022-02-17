@@ -17,7 +17,7 @@
   </properties>
 
   <dependencies>
-<!--    WEEQ MODULE -->
+    <!--    WEEQ MODULE -->
     <dependency>
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-model</artifactId>
@@ -34,8 +34,12 @@
       <groupId>com.burgerham</groupId>
       <artifactId>weeq-core-lib</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.burgerham</groupId>
+      <artifactId>weeq-core-security</artifactId>
+    </dependency>
 
-<!--    MODEL MAPPER  -->
+    <!--    MODEL MAPPER  -->
     <dependency>
       <groupId>org.modelmapper</groupId>
       <artifactId>modelmapper</artifactId>

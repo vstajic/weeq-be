@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthenticationResponse implements Serializable {
+public class AuthenticationResponseDto implements Serializable {
 
   private String jwt;
 
